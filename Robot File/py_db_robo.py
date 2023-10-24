@@ -36,7 +36,7 @@ class py_db_robo:
         cursor.close()
         conn.close()
         directory = "temp"
-        parent_dir = "D:\End to End\Evidence"
+        parent_dir = ".\Evidence"
         path = os.path.join(parent_dir,directory)
         if os.path.isdir(path)==False:
                 os.mkdir(path)
@@ -57,7 +57,7 @@ class py_db_robo:
         try:
             mylist.append(SS_msg)
             directory = "temp"
-            parent_dir = "D:\End to End\Evidence"
+            parent_dir = ".\Evidence"
             path = os.path.join(parent_dir,directory)
             if os.path.isdir(path)==False:
                 os.mkdir(path)
@@ -72,9 +72,9 @@ class py_db_robo:
         dummy=len(mylist)
         for i in range(dummy):
             doc.add_heading(mylist[i], 5)
-            doc.add_picture('D:\End to End\Evidence\\'+dirr+'\\'+mylist[i]+'.png', width=Inches(6.5), height=Inches(3.5))
-        doc.save('D:\End to End\Evidence\\'+scn+'.docx')
-        parent1 = "D:/End to End/Evidence"
+            doc.add_picture('.\Evidence\\'+dirr+'\\'+mylist[i]+'.png', width=Inches(6.5), height=Inches(3.5))
+        doc.save('.\Evidence\\'+scn+'.docx')
+        parent1 = "./Evidence"
         path2 = os.path.join(parent1, dirr)
         shutil.rmtree(path2)
             #mylist.clear()
@@ -103,11 +103,11 @@ class py_db_robo:
     def Screenshot(self,SS_msg):
         mylist1.append(SS_msg)
         directory = "temp"
-        parent_dir = "D:\End to End\Evidence"
+        parent_dir = ".\Evidence"
         path = os.path.join(parent_dir,directory)
         if not os.path.exists(path):
             os.mkdir(path)
-        filename = 'D:\End to End\Evidence\\'+directory+'\\'+SS_msg+'.png'
+        filename = '.\Evidence\\'+directory+'\\'+SS_msg+'.png'
         screen_width, screen_height = pyautogui.size()
         region = (0, 150, screen_width, screen_height - 210)
         screenshot = pyautogui.screenshot(region=region)
@@ -121,9 +121,9 @@ class py_db_robo:
         dummy=len(mylist)
         for i in range(dummy):
             doc.add_heading(mylist1[i], 5)
-            doc.add_picture('D:\End to End\Evidence\\'+dirr+'\\'+mylist1[i]+'.png', width=Inches(6.5), height=Inches(3.5))
-        doc.save('D:\End to End\Evidence\\'+scn+'.docx')
-        parent1 = "D:/End to End/Evidence"
+            doc.add_picture('.\Evidence\\'+dirr+'\\'+mylist1[i]+'.png', width=Inches(6.5), height=Inches(3.5))
+        doc.save('.\Evidence\\'+scn+'.docx')
+        parent1 = "./Evidence"
         path2 = os.path.join(parent1, dirr)
         shutil.rmtree(path2)
         mylist1.clear()

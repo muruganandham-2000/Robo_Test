@@ -16,7 +16,7 @@ ${LName_1}        //form[@id='contact_form']/input[@name='last_name']
 ${EMail_1}        //form[@id='contact_form']/input[@name='email']
 ${COmment_1}        //form[@id='contact_form']/textarea[@name='message']
 ${Submit_1}        //div[@id='form_buttons']/input[@value='SUBMIT']
-${Screenshot_path}        D:/End to End/Evidence/temp
+${Screenshot_path}        ./Evidence/temp
 
 *** Keywords ***    
 I connect to DB
