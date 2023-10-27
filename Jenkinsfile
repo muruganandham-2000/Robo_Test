@@ -8,8 +8,8 @@ pipeline {
             steps {
                 script {
                     // Build a Docker image with Chrome, ChromeDriver, and your Selenium code
-                    docker.build('my-selenium-container', '-f Dockerfile')
-
+                    //docker.build('my-selenium-container', '-f Dockerfile')
+                    sh 'Sudo docker build -t my-html-css-app .'
                     // Push the Docker image to a registry (optional)
                     // docker.withRegistry('https://registry.example.com', 'my-registry-credentials') {
                     //     docker.image('my-selenium-container').push('latest')
