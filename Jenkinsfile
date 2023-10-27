@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+            label 'UbuntuJenkinSlave'   
+        }
 
     stages {
         stage('Build Docker Image') {
