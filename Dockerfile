@@ -10,11 +10,13 @@ RUN apt-get update && apt-get upgrade -y && \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# Download and install ChromeDriver
-RUN wget -N https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chromedriver-linux64.zip -P /usr/local/bin/ && \
-    unzip /usr/local/bin/chromedriver-linux64.zip -d /usr/local/bin/ && \
-    chmod +x /usr/local/bin/chromedriver && \
-    rm /usr/local/bin/chromedriver-linux64.zip
+
+# Download and install ChromeDriver to the current directory
+RUN wget -N https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chromedriver-linux64.zip -P /app/ && \
+    unzip /app/chromedriver-linux64.zip -d /app/ && \
+    chmod +x /app/chromedriver && \
+    rm /app/chromedriver-linux64.zip
+
 
 # Set the working directory inside the container
 WORKDIR /app
