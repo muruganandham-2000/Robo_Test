@@ -1,0 +1,7 @@
+robotframework
+robotframework-selenium2library
+robotframework-seleniumlibrary
+requests
+mysql-connector-python
+python-dotenv
+pandas
