@@ -6,4 +6,3 @@ mysql-connector-python
 python-dotenv
 pandas
 python-docx
-pyautogui

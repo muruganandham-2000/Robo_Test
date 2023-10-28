@@ -6,7 +6,6 @@ import os
 import shutil
 from dotenv import load_dotenv
 from dbconnection import dbconnection
-import pyautogui
 
 mylist=['Screen1','Screen2','Screen3']
 mylist1=[]
@@ -97,7 +96,7 @@ class py_db_robo:
         conn.close()
         return column_dict
     
-    def Screenshot(self,SS_msg):
+    '''def Screenshot(self,SS_msg):
         mylist1.append(SS_msg)
         directory = "temp"
         parent_dir = ".\Evidence"
@@ -108,7 +107,7 @@ class py_db_robo:
         screen_width, screen_height = pyautogui.size()
         region = (0, 150, screen_width, screen_height - 210)
         screenshot = pyautogui.screenshot(region=region)
-        screenshot.save(filename)
+        screenshot.save(filename)'''
 
     
     def word_cov_alter(self,scn):
