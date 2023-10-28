@@ -5,13 +5,13 @@ from dotenv import load_dotenv
 class hehehe:
    load_dotenv()
    def Num_0f_rows_Excel(self):
-      A=pd.read_excel('D:/End to End/Excel_func/Excel.xlsx',dtype=str) 
+      A=pd.read_excel('./Excel_func/Excel.xlsx',dtype=str) 
       datatemp=pd.DataFrame(A)
       data=datatemp[(datatemp['Run_Indicator']=='Y')]
       return data.shape[0]
 
    def Num_of_record(self):
-      A=pd.read_excel('D:/End to End/Excel_func/Excel.xlsx',dtype=str) 
+      A=pd.read_excel('./Excel_func/Excel.xlsx',dtype=str) 
       datatemp=pd.DataFrame(A)
       data=datatemp[(datatemp['Run_Indicator']=='Y')]
       data2=data.fillna('')
@@ -27,15 +27,15 @@ class hehehe:
       return mydict
 
    def updateExcelfile(self,Result,Scenariotemp):
-      A=pd.read_excel('D:/End to End/Excel_func/Excel.xlsx',dtype=str) 
+      A=pd.read_excel('./Excel_func/Excel.xlsx',dtype=str) 
       datatemp=pd.DataFrame(A)
       data=datatemp[(datatemp['Scenario']==Scenariotemp) & (datatemp['Run_Indicator']=='Y')]
       A['Result'][data.index]=Result
-      A.to_excel('D:/End to End/Excel_func/Excel.xlsx',index=False)
+      A.to_excel('./Excel.xlsx',index=False)
    
    def return_record(self):
       dict = {}
-      Ex_cel=pd.read_excel('D:/End to End/Excel_func/Excel.xlsx',dtype=str) 
+      Ex_cel=pd.read_excel('./Excel_func/Excel.xlsx',dtype=str) 
       datatemp=pd.DataFrame(Ex_cel)
       data=datatemp[(datatemp['Run_Indicator']=='Y')]
       final_dataframe=data.fillna('')                    #final_dataframe=fill_na.reset_index()
