@@ -14,6 +14,7 @@ pipeline {
                     // docker.withRegistry('https://registry.example.com', 'my-registry-credentials') {
                     //     docker.image('my-selenium-container').push('latest')
                     // }
+                    echo 'haha'
                 }
             }
         }
@@ -31,6 +32,7 @@ pipeline {
                     // } finally {
                     //     seleniumContainer.stop()
                     // }
+                    echo 'haha'
                 }
             }
         }
