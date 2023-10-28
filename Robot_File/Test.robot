@@ -23,8 +23,7 @@ I connect to DB
     ${DB_Conn}=   Db Connection
     RETURN    ${DB_Conn}
 
-Opening the Main page
-    ${driver_path}=    Get Driver Path With Browser    Chrome 
+Opening the Main page 
     Open Browser    ${Main_Page}    chrome
     Maximize Browser Window
 

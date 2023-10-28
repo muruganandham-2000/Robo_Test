@@ -1,9 +1,6 @@
 import pandas as pd
-import mysql.connector as db
 from dotenv import load_dotenv
-import os
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
+
 
 class hehehe:
    load_dotenv()
@@ -12,14 +9,6 @@ class hehehe:
       datatemp=pd.DataFrame(A)
       data=datatemp[(datatemp['Run_Indicator']=='Y')]
       return data.shape[0]
-
-   def get_driver_path_with_browser(self,browser_name):
-      if browser_name.lower() == 'chrome':
-         driver_path = ChromeDriverManager().install()
-      elif browser_name.lower() == 'firefox':
-         driver_path = GeckoDriverManager().install()
-      print(driver_path)
-      return driver_path
 
    def Num_of_record(self):
       A=pd.read_excel('D:/End to End/Excel_func/Excel.xlsx',dtype=str) 

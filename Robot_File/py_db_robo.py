@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import pyodbc as od
 import mysql.connector as db
 from docx.shared import Inches
 import docx
@@ -9,7 +7,6 @@ import shutil
 from dotenv import load_dotenv
 from dbconnection import dbconnection
 import pyautogui
-from PIL import Image
 
 mylist=['Screen1','Screen2','Screen3']
 mylist1=[]
