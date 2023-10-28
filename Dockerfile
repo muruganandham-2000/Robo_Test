@@ -28,7 +28,7 @@ WORKDIR /app
 
 # Copy the contents of the current directory into the container
 COPY ./ /app/
-RUN pip install -r /app/requirements.txt
+RUN pip install -r /app/Requirements.txt
 
 # Your additional Dockerfile instructions go here
 # Copy your Selenium test script and other application files
