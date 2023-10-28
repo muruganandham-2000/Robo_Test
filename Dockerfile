@@ -11,10 +11,10 @@ RUN apt-get update && apt-get upgrade -y && \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install ChromeDriver
-RUN wget -N https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chromedriver-linux64.zip -P /tmp/ && \
-    unzip /tmp/chromedriver_linux64.zip -d /usr/local/bin/ && \
+RUN wget -N https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chromedriver-linux64.zip -P /usr/local/bin/ && \
+    unzip /usr/local/bin/chromedriver-linux64.zip -d /usr/local/bin/ && \
     chmod +x /usr/local/bin/chromedriver && \
-    rm /tmp/chromedriver_linux64.zip
+    rm /usr/local/bin/chromedriver-linux64.zip
 
 # Set the working directory inside the container
 WORKDIR /app
