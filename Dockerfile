@@ -11,7 +11,7 @@ FROM selenium/standalone-chrome:latest
 
 RUN apt-get update && apt-get upgrade -y && \
         apt-get install -y --no-install-recommends \
-        chromium-browser \
+        #chromium-browser \
         python3.11 \
         python3-pip && \
         rm -rf /var/lib/apt/lists/*
