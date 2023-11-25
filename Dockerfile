@@ -1,26 +1,37 @@
-# Use a base image with Ubuntu
+# Use a base image with Python, Google Chrome, and ChromeDriver
+#FROM python:3.8-slim
 FROM ubuntu:22.04
 
-# Install necessary packages and dependencies
+
+# Install necessary packages (e.g., Chrome and dependencies)
+# RUN apt-get update && apt-get install -y \
+#     google-chrome-stable \
+#     unzip
+
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends \
-    python3.11 \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
+        apt-get install -y --no-install-recommends \
+        python3.11 \ 
+        python3-pip && \
+        rm -rf /var/lib/apt/lists/*
 
-# Download and install ChromeDriver to the current directory
-# RUN wget -N https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chromedriver-linux64.zip -P /usr/local/bin/ && \
-#     unzip /usr/local/bin/chromedriver-linux64.zip -d /app/ && \
-#     chmod +x /app/chromedriver-linux64/chromedriver && \
-#     rm /app/chromedriver-linux64.zip
 
+# Install Python dependencies
+#RUN pip install selenium
+
+# Download and install ChromeDriver
+# RUN wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_linux64.zip
+# RUN unzip /tmp/chromedriver.zip -d /usr/local/bin/
+# RUN rm /tmp/chromedriver.zip
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the contents of the current directory and install Python dependencies
+# Copy the contents of the current directory into the container
 COPY ./ /app/
 RUN pip install -r /app/Requirements.txt
 
+# Your additional Dockerfile instructions go here
+# Copy your Selenium test script and other application files
+
 # Set the entry point for running your Selenium tests
-CMD ["robot", "Utility/utilities.robot"]
+CMD ["robot", "Robot_File/Testcase.robot"]
