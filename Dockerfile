@@ -9,12 +9,12 @@ FROM selenium/standalone-chrome:latest
 #     google-chrome-stable \
 #     unzip
 
-RUN apt-get update && apt-get upgrade -y && \
-        apt-get install -y --no-install-recommends \
-        #chromium-browser \
-        python3.11 \
-        python3-pip && \
-        rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get upgrade -y && \
+#         apt-get install -y --no-install-recommends \
+#         chromium-browser \
+#         python3.11 \
+#         python3-pip && \
+#         rm -rf /var/lib/apt/lists/*
 
 
 # Install Python dependencies
