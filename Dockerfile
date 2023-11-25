@@ -1,12 +1,12 @@
 FROM ubuntu:22.04
 
 # Copy the Chrome .deb file into the Docker image
-COPY google-chrome-stable_119.0.6045.160_amd64.deb /tmp/
+COPY google-chrome-stable_current_amd64.deb /tmp/
 
 # Install necessary packages
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-    /tmp/google-chrome-stable_119.0.6045.160_amd64.deb \
+    /tmp/google-chrome-stable_current_amd64.deb \
     python3.11 \
     python3-pip && \
     rm -rf /var/lib/apt/lists/*
