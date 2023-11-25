@@ -1,6 +1,7 @@
 # Use a base image with Python, Google Chrome, and ChromeDriver
 #FROM python:3.8-slim
-FROM ubuntu:22.04
+#FROM ubuntu:22.04
+FROM selenium/standalone-chrome:latest
 
 
 # Install necessary packages (e.g., Chrome and dependencies)
